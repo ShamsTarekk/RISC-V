@@ -1,0 +1,6 @@
+
+read_verilog /home/asiclab/shams_sem10/RISCV-ASICF_LOW/yosys_synth/riscv_netlist.v
+
+hierarchy -top riscv_top
+
+write_spice /home/asiclab/shams_sem10/RISCV-ASICF_LOW/PNR/riscv_top_yosys.spice
