@@ -1,0 +1,5 @@
+$ 'iverilog' -B '/nix/store/zscrq5qw704sa576x4nqj2rjiiixmxrs-iverilog-13.0/lib/ivl'  -Ttyp -o netlist.v.chained.v.tb.sv.a.out netlist.v.chained.v.tb.sv 2>&1
+$ 'vvp' netlist.v.chained.v.tb.sv.a.out
+Success: expected 00010111010111011110100110100110001001101010010010000001100110011111000101000110100100110100000001000 got 00010111010111011110100110100110001001101010010010000001100110011111000101000110100100110100000001000
+SUCCESS_STRING
+netlist.v.chained.v.tb.sv:72: $finish called at 828 (1s)
