@@ -1,0 +1,47 @@
+[tasks]
+bmc
+cover
+
+[options]
+bmc: mode bmc
+cover: mode cover
+depth 10
+
+
+
+[engines]
+smtbmc
+
+[script]
+read_verilog -formal riscv_props.v
+read_verilog -formal riscv_top.v
+
+prep -top riscv_top
+
+[files]
+riscv_props.v
+data.hex
+program.hex
+alu.v
+control_unit.v
+conv.v
+dmem.v
+ex_mem_reg.v
+ex_mem_stages_top.v
+ex_stage_ex_mem_reg.v
+ex_stage.v
+id_ex_reg_top.v
+id_ex_reg.v
+id_stage.v
+if_id_reg.v
+if_stage_id_reg.v
+if_stage.v
+imem.v
+imm_gen.v
+mem_stage.v
+mem_wb_integrated.v
+mem_wb.v
+regfile.v
+wb_stage.v
+riscv_defs.vh
+riscv_top.v
