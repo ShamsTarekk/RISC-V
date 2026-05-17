@@ -1,0 +1,24 @@
+
+
+###################################################s
+read_verilog sources/riscv_top.v
+hierarchy -check -top riscv_top
+
+proc
+memory
+
+flatten 
+opt
+clean
+
+techmap
+dfflibmap -liberty /home/asiclab/.ciel/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/asiclab/.ciel/ciel/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+
+clean
+write_verilog -noattr -noexpr yosys_synth/riscv_netlist.v
+
+#show riscv_top
+
+write_spice -top riscv_top /home/asiclab/shams_sem10/RISCV-ASICF_LOW/PNR/riscv_top_yosys.spice
